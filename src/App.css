@@ -1,0 +1,14 @@
+.App {
+  min-height: 100vh;
+  background-color: #E5E5E5;
+  
+}
+
+.wrapper_App {
+  max-width: 1024px;
+  height: inherit;
+  margin: 0 auto;
+  
+  
+}
+

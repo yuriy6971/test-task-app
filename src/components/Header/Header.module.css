@@ -1,0 +1,15 @@
+.head_container {
+    width: 1024px;
+    height: 60px;
+    position: fixed;
+    background-color: #FFFF;
+}
+
+.head_block {
+    height: inherit;
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

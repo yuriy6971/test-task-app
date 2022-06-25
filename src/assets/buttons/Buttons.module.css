@@ -1,0 +1,15 @@
+.butt {
+    width: 100px;
+    height: 34px;
+    border-radius: 80px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #F4E041;
+}
+.butt_disabled {
+    opacity: 0.5;
+}
+
+.show_more_container {
+    margin-bottom: 30px;
+}

@@ -1,0 +1,88 @@
+.login_title {
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.form {
+  /* text-align: center; */
+}
+.input_name,.input_email,.input_tel{
+ font-size: 16px;
+  width: 380px;
+  height: 54px;
+  display: block;
+  color: #7E7E7E;
+  background-color: white;
+  border: 1px solid #7E7E7E;
+  border-radius: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 1em;
+  
+}
+/* .input_name,.input_email {
+  margin-bottom: 50px;
+} */
+.error_info,.error_tel {
+  height: 50px;
+  text-align: center;
+  font-size: 12px;
+  color: red;
+  padding-top: 4px;
+}
+.error_tel {
+  height: 25px;
+}
+.block_tel,.block_radio {
+  width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-bottom: 25px; */
+
+}
+.tel_format {
+  font-size: 12px;
+  line-height: 14px;
+  padding-left: 1em;
+}
+.title_position {
+font-size: 16px;
+line-height: 26px;
+
+}
+.login {
+  width: 100px;
+  height: 34px;
+  display: block;
+  border-radius: 80px;
+ margin: 0 auto 15px auto;
+  cursor: pointer;
+  background-color: #F4E041;
+}
+.disabled_login {
+  background-color: #B4B4B4;
+}
+
+.title_position {
+  font-size: 16px;
+  line-height: 26psx;
+}
+.input:focus {
+  border: 2px solid #0D99FF;
+  border-radius: 4px;
+}
+li {
+  font-size: 16px;
+  margin-bottom: 7px;
+  
+}
+.block_radio input {
+  margin-right: 17px;
+}
+.ul_radio {
+  margin-bottom: 47px;
+}
+.input_file {
+  margin-bottom: 54px;
+}
