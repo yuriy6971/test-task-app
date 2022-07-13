@@ -7,8 +7,10 @@ import { getPositionsThunkCreator,postUserThunkCreator } from "../../redux/login
 import cn from "classnames";
 import Form from "react-bootstrap/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Redirect } from "react-router-dom";
 
 const Login = (props) => {
+  
   useEffect(() => {
     props.getPositionsThunk();
   }, []);
@@ -34,9 +36,16 @@ const Login = (props) => {
     formData.append("photo", data.file[0])
       
     props.postUserTunk(formData,props.token)
+  
    // alert(JSON.stringify(data));
+
     reset();
+    
+     
   };
+  if(props.toggleProfile) return <Redirect to = {"/users"} />
+
+  
 
   return (
     <div>
@@ -91,10 +100,7 @@ const Login = (props) => {
         </div>
         <div className={s.block_radio}>
           <h5 className={s.title_position}>Select your position</h5>
-          {/* <ul>
-            <li><input type="radio" value={"ku-ku"}  {...register("Bird",{})} />Bird</li>
-            <li><input type="radio" value={"mu-mu"} {...register("Bird",{})} />Caw</li>
-          </ul> */}
+       
 
           <ul className={s.ul_radio}>
             {props.positions.map((item, index) => (
@@ -132,7 +138,8 @@ const Login = (props) => {
 const mapStateToProps = (state) => {
   return {
     positions: state.loginPage.positions,
-    token : state.loginPage.token
+    token : state.loginPage.token,
+    toggleProfile : state.loginPage.toggleProfile
   };
 };
 

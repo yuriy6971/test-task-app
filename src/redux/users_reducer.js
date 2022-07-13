@@ -1,5 +1,6 @@
 import { usersAPI } from "../api/api";
 
+
 const SET_USERS = "SET_USERS";
 const SET_NEW_USERS = "SET_NEW_USERS"
 
@@ -63,6 +64,7 @@ export const getNewUsersThunkCreator = () => {
     .then(response => {
       let {users} = response.data
       dispatch(setNewUsersActionCreator(users))
+      
     })
   }
 }

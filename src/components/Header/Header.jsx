@@ -5,12 +5,15 @@ import Butt_Users from "../../assets/buttons/Butt_Users";
 import Butt_Sign from "../../assets/buttons/Butt_Sign";
 import { connect } from "react-redux";
 import { getUsersThunkCreator } from "../../redux/users_reducer";
-import { getTokenThunkCreator } from "../../redux/login_reducer";
+import { getTokenThunkCreator,setFalseProfileActionCreator } from "../../redux/login_reducer";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const getServerUsers = (page, count) => {
-    props.page === 1 && props.getUsersThunk(page, count);
+    props.page === 1 && <>
+    props.getUsersThunk(page, count)
+    props.setFalseProfile()
+    </> ;
   };
 
   return (
@@ -49,6 +52,9 @@ let mapDispatchToProps = (dispatch) => {
     getTokenThunk: () => {
       dispatch(getTokenThunkCreator());
     },
+    setFalseProfile : () => {
+      dispatch (setFalseProfileActionCreator())
+    }
   };
 };
 
