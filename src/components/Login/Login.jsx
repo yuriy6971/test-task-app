@@ -43,9 +43,8 @@ const Login = (props) => {
     
      
   };
-  if(props.toggleProfile) return <Redirect to = {"/users"} />
 
-  
+  if(props.toggleProfile) return <Redirect to = {"/users"} />
 
   return (
     <div>
