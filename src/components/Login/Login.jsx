@@ -3,7 +3,7 @@ import s from "./Login.module.css";
 import { useForm } from "react-hook-form";
 import { connect } from "react-redux";
 import { useEffect } from "react";
-import { getPositionsThunkCreator,postUserThunkCreator } from "../../redux/login_reducer";
+import { getPositionsThunkCreator,postUserThunkCreator,getTokenThunkCreator } from "../../redux/login_reducer";
 import cn from "classnames";
 import Form from "react-bootstrap/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,6 +13,7 @@ const Login = (props) => {
   
   useEffect(() => {
     props.getPositionsThunk();
+    props.getTokenThunk()
   }, []);
 
   const {
@@ -117,9 +118,10 @@ const Login = (props) => {
           </ul>
         </div>
         <div className={s.input_file}>
-          <Form.Control type="file" size="lg" {...register("file", {
+          {/* <Form.Control type="file" size="lg" {...register("file", {
             required :true
-          })} />
+          })} /> */}
+          <input type="file" size = "35" {...register("file",{required :true})} />
         </div>
 
         <button
@@ -149,6 +151,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     postUserTunk : (formData,token) => {
       dispatch(postUserThunkCreator(formData,token))
+    },
+    getTokenThunk : () => {
+      dispatch (getTokenThunkCreator())
     }
   };
 };

@@ -1,0 +1,40 @@
+
+html,body,div {
+    box-sizing: border-box;
+    margin: 0;
+}
+* {
+    box-sizing: inherit;
+}
+
+.container {
+    width: 1000px;
+    height: 750px;
+    margin: 0 auto;
+    background: lightgray;
+    padding-top: 50px;
+    
+}
+
+.box {
+    width: 90%;
+    height: 450px;
+    border: 3px solid red;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.box_item {
+width: 150px;
+height: 120px;
+border: 2px dashed violet;
+
+}
+.one {
+    text-align: right;
+}
+.twoo {
+    text-align: center;
+}

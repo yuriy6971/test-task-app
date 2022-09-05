@@ -82,6 +82,7 @@ export const getTokenThunkCreator = () => {
     return (dispatch) => {
         loginAPI.getToken().then(response => {
             dispatch(setTokenActionCreator(response.data.token))
+            
         })
     }
 }

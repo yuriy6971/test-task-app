@@ -10,10 +10,10 @@ import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const getServerUsers = (page, count) => {
-    props.page === 1 && <>
+   // props.page === 1 && <>
     props.getUsersThunk(page, count)
-    props.setFalseProfile()
-    </> ;
+   // props.setFalseProfile()
+    //</> ;
   };
 
   return (
