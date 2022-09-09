@@ -12,7 +12,7 @@ const Users = (props) => {
   return (
     <div className={s.users_container}>
       <h2 className={s.users_title}>Working with GET request</h2>
-      <p>token : {props.token} </p>
+      {/* <p>token : {props.token} </p> */}
       <div className={s.block_cart_users}>
         {props.users.sort((a,b) => a.registration_timestamp < b.registration_timestamp ? 1 : -1).map((item,index) => <Users_Item key = {index.toString()} name = {item.name} email = {item.email} photo = {item.photo} position = {item.position} phone = {item.phone} time = {item.registration_timestamp} />)}
       </div>

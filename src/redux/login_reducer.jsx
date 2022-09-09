@@ -1,5 +1,4 @@
 import { ReplyOutlined } from "@mui/icons-material"
-import { act } from "react-dom/test-utils"
 import {loginAPI} from "../api/api"
 import {getNewUsersThunkCreator} from "./users_reducer"
 import { Redirect } from "react-router-dom"
@@ -90,6 +89,7 @@ export const getTokenThunkCreator = () => {
 export const postUserThunkCreator = (formData,token) => {
     return (dispatch) => {
         loginAPI.postUser(formData,token).then(response => {
+
             if(response.data.success){
                 dispatch(getNewUsersThunkCreator())
                 dispatch(setIsProfileActionCreator(response.data.success))

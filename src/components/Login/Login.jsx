@@ -1,4 +1,5 @@
 import React from "react";
+import {useState} from 'react'
 import s from "./Login.module.css";
 import { useForm } from "react-hook-form";
 import { connect } from "react-redux";
@@ -10,11 +11,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Redirect } from "react-router-dom";
 
 const Login = (props) => {
+
+  // const [file, setFile] = useState()
   
   useEffect(() => {
     props.getPositionsThunk();
     props.getTokenThunk()
   }, []);
+
+  // const onMainPhotoSelected = (event) => {
+  //   event.preventDefault()
+  //   if (event.target.files[0]) {
+  //     setFile(event.target.files[0]);
+  // }
 
   const {
     register,
@@ -34,9 +43,9 @@ const Login = (props) => {
     formData.append('name',data.firstName)
     formData.append('email',data.email)
     formData.append("phone",data.phone)
-    formData.append("photo", data.file[0])
+    formData.append("photo", data.photo[0])
       
-    props.postUserTunk(formData,props.token)
+     props.postUserTunk(formData,props.token)
   
    // alert(JSON.stringify(data));
 
@@ -121,7 +130,7 @@ const Login = (props) => {
           {/* <Form.Control type="file" size="lg" {...register("file", {
             required :true
           })} /> */}
-          <input type="file" size = "35" {...register("file",{required :true})} />
+          <input type="file" size = "35"  {...register("photo",{required :true})} />
         </div>
 
         <button
