@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/test-task-app/static/css/main.1cd30309.css",
-    "main.js": "/test-task-app/static/js/main.7518b88f.js",
+    "main.js": "/test-task-app/static/js/main.543868f9.js",
     "static/js/787.fd8c5a2b.chunk.js": "/test-task-app/static/js/787.fd8c5a2b.chunk.js",
     "static/media/fone_image.jpg": "/test-task-app/static/media/fone_image.2b96e77397bde68acc87.jpg",
     "static/media/Logo.svg": "/test-task-app/static/media/Logo.56bda82bd882001476c0cd3c0dd1e432.svg",
@@ -9,11 +9,11 @@
     "static/media/nunito-v24-latin-regular.woff2": "/test-task-app/static/media/nunito-v24-latin-regular.b8644b6e04ecda1cf98b.woff2",
     "index.html": "/test-task-app/index.html",
     "main.1cd30309.css.map": "/test-task-app/static/css/main.1cd30309.css.map",
-    "main.7518b88f.js.map": "/test-task-app/static/js/main.7518b88f.js.map",
+    "main.543868f9.js.map": "/test-task-app/static/js/main.543868f9.js.map",
     "787.fd8c5a2b.chunk.js.map": "/test-task-app/static/js/787.fd8c5a2b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1cd30309.css",
-    "static/js/main.7518b88f.js"
+    "static/js/main.543868f9.js"
   ]
 }
