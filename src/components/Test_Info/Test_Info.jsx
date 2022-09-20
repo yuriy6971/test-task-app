@@ -16,6 +16,7 @@ const Test_Info = () => {
           mind. They should also be excited to learn, as the world of Front-End
           Development keeps evolving.
         </p>
+
         <div className={s.sign}>
           <Butt_Sign />
         </div>

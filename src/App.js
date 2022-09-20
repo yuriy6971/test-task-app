@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Test_Info from "./components/Test_Info/Test_Info";
 import Users from "./components/Users/Users";
 import Login from "./components/Login/Login";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -20,6 +20,5 @@ function App() {
       </div>
     </div>
   );
-
-  }
+}
 export default App;

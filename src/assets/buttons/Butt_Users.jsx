@@ -11,7 +11,7 @@ const Butt_Users = (props) => {
       <NavLink to="/users"> 
         <button type='button' className={cn(
             s.butt
-        )} onClick = {() => {props.getUsers(props.page,props.count)}}>Users</button>
+        )} onClick = {() => {props.getUsers(props.page,props.count)}} >Users</button>
        </NavLink>
         </>
     ) 

@@ -38,6 +38,7 @@ const Login = (props) => {
   });
 
   const onSubmit = (data) => {
+  
     const formData = new FormData()
     formData.append("position_id",data.position_id)
     formData.append('name',data.firstName)
@@ -45,7 +46,7 @@ const Login = (props) => {
     formData.append("phone",data.phone)
     formData.append("photo", data.photo[0])
       
-     props.postUserTunk(formData,props.token)
+     props.postUserThunk(formData,props.token)
   
    // alert(JSON.stringify(data));
 
@@ -158,7 +159,7 @@ const mapDispatchToProps = (dispatch) => {
     getPositionsThunk: () => {
       dispatch(getPositionsThunkCreator());
     },
-    postUserTunk : (formData,token) => {
+    postUserThunk : (formData,token) => {
       dispatch(postUserThunkCreator(formData,token))
     },
     getTokenThunk : () => {
