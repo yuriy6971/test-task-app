@@ -13,14 +13,12 @@ import { Link } from "react-router-dom";
 import { PropaneSharp } from "@mui/icons-material";
 
 const Header = (props) => {
-  
-  const getShowUsers = (page,count) => {
-  !props.users.length && props.getUsersThunk(page,count)
-  }
+  const getShowUsers = (page, count) => {
+    !props.users.length && props.getUsersThunk(page, count);
+  };
 
   return (
     <div className={s.head_container}>
-      <div>{props.users.length}</div>
       <div className={s.head_block}>
         <div className={s.head_logo}>
           <Link to="">
@@ -33,7 +31,7 @@ const Header = (props) => {
             page={props.page}
             count={props.count}
           />
-          <Butt_Sign getToken={props.getTokenThunk} />
+          <Butt_Sign setFalseProfile = {props.setFalseProfile} />
         </div>
       </div>
     </div>

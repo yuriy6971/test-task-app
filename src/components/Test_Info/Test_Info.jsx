@@ -9,7 +9,7 @@ const Test_Info = () => {
         <h2 className={s.test_title}>
           Test assignment for front-end developer
         </h2>
-        <p className={s.test_text}>
+        <p>
           What defines a good front-end developer is one that has skilled
           knowledge of HTML, CSS, JS with a vast understanding of User design
           thinking as they'll be building web interfaces with accessibility in
