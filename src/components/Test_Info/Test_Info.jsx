@@ -1,8 +1,11 @@
 import React from "react";
 import s from "./Test_Info.module.css";
 import Butt_Sign from "../../assets/buttons/Butt_Sign";
+import {connect} from "react-redux"
+import {setFalseProfileActionCreator} from "../../redux/login_reducer"
+import { PropaneSharp } from "@mui/icons-material";
 
-const Test_Info = () => {
+const Test_Info = (props) => {
   return (
     <div className={s.info_block}>
       <div className={s.text_container}>
@@ -18,10 +21,19 @@ const Test_Info = () => {
         </p>
 
         <div className={s.sign}>
-          <Butt_Sign />
+          <Butt_Sign setFalseProfile = {props.setFalseProfile} />
         </div>
       </div>
     </div>
   );
 };
-export default Test_Info;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setFalseProfile: () => {
+      dispatch(setFalseProfileActionCreator());
+    }
+  }
+}
+
+export default connect (null, mapDispatchToProps) (Test_Info)
