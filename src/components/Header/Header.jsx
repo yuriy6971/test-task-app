@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Header.module.css";
-import Logo from "../../assets/images/Logo.svg";
+ import Logo from "../../assets/images/Logo.svg";
 import Butt_Users from "../../assets/buttons/Butt_Users";
 import Butt_Sign from "../../assets/buttons/Butt_Sign";
 import { connect } from "react-redux";
@@ -10,6 +10,7 @@ import {
   setFalseProfileActionCreator,
 } from "../../redux/login_reducer";
 import { Link } from "react-router-dom";
+import Preloader from "../common/Preloader";
 import { PropaneSharp } from "@mui/icons-material";
 
 const Header = (props) => {
@@ -19,6 +20,7 @@ const Header = (props) => {
 
   return (
     <div className={s.head_container}>
+      {props.isFetching && <Preloader />}
       <div className={s.head_block}>
         <div className={s.head_logo}>
           <Link to="">
@@ -43,6 +45,7 @@ let mapStateToProps = (state) => {
     count: state.usersPage.count,
     page: state.usersPage.page,
     users: state.usersPage.users,
+    isFetching : state.usersPage.isFetching
   };
 };
 

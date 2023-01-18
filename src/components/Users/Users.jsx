@@ -5,6 +5,7 @@ import Users_Item from "./Users_Item/Users_Item";
 import Butt_ShowMore from "../../assets/buttons/Butt_ShowMore";
 import { getUsersThunkCreator } from "../../redux/users_reducer";
 
+
 const Users = (props) => {
   return (
     <div className={s.users_container}>
@@ -48,6 +49,7 @@ let mapStateToProps = (state) => {
     count: state.usersPage.count,
     page: state.usersPage.page,
     token: state.loginPage.token,
+
   };
 };
 

@@ -3,12 +3,14 @@ import { usersAPI } from "../api/api";
 
 const SET_USERS = "SET_USERS";
 const SET_NEW_USERS = "SET_NEW_USERS"
+const SET_FETCHING = "SET_FETCHING"
 
 const initialState = {
   users: [],
   count : 6,
   page : 1,
-  total_users : 0
+  total_users : 0,
+  isFetching : false
 };
 
 const users_Reducer = (state = initialState, action) => {
@@ -25,6 +27,12 @@ const users_Reducer = (state = initialState, action) => {
           ...state,
           users : action.users,
           page  : 2
+        };
+
+        case SET_FETCHING : 
+        return {
+          ...state,
+          isFetching : action.isFetching
         }
 
     default:
@@ -45,15 +53,23 @@ const setNewUsersActionCreator = (serverUsers) => {
     type :SET_NEW_USERS,
     users : serverUsers
   }
+};
+
+export const setFetchingActionCreator = (boolFetch) => {
+  return {
+    type : SET_FETCHING,
+    isFetching : boolFetch
+  }
 }
 
 export const getUsersThunkCreator = (page,count) => {
   return (dispatch) => {
-    
+    dispatch(setFetchingActionCreator(true))
     usersAPI.getUsers(page,count).then((response) => {
        let {total_users,users} = response.data
       
        dispatch(setUserActionCreator(total_users,users));
+       dispatch (setFetchingActionCreator(false))
     });
   };
 };

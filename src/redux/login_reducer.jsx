@@ -2,6 +2,7 @@ import { ReplyOutlined } from "@mui/icons-material"
 import {loginAPI} from "../api/api"
 import {getNewUsersThunkCreator} from "./users_reducer"
 import { Redirect } from "react-router-dom"
+import {setFetchingActionCreator} from "./users_reducer"
 
 const SET_POSITIONS = "SET_POSITIONS"
 const SET_TOKEN = "SET_TOKEN"
@@ -88,11 +89,13 @@ export const getTokenThunkCreator = () => {
 
 export const postUserThunkCreator = (formData,token) => {
     return (dispatch) => {
+        dispatch(setFetchingActionCreator(true))
         loginAPI.postUser(formData,token).then(response => {
 
             if(response.data.success){
                 dispatch(getNewUsersThunkCreator())
                 dispatch(setIsProfileActionCreator(response.data.success))
+                dispatch(setFetchingActionCreator(false))
                // console.log(response.data.success)
             }
             else  alert(response.data.message)
