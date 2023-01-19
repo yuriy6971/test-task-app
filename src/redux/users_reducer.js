@@ -26,6 +26,7 @@ const users_Reducer = (state = initialState, action) => {
         return {
           ...state,
           users : action.users,
+          total_users : action.total_users,
           page  : 2
         };
 
@@ -48,10 +49,11 @@ const setUserActionCreator = (usersCount,serverUsers) => {
   };
 };
 
-const setNewUsersActionCreator = (serverUsers) => {
+const setNewUsersActionCreator = (usersCount,serverUsers) => {
   return {
     type :SET_NEW_USERS,
-    users : serverUsers
+    users : serverUsers,
+    total_users : usersCount
   }
 };
 
@@ -78,8 +80,8 @@ export const getNewUsersThunkCreator = () => {
   return (dispatch) => {
     usersAPI.getNewUsers()
     .then(response => {
-      let {users} = response.data
-      dispatch(setNewUsersActionCreator(users))
+      let {total_users, users} = response.data
+      dispatch(setNewUsersActionCreator(total_users, users))
       
     })
   }

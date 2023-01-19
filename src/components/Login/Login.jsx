@@ -58,7 +58,7 @@ const Login = (props) => {
    if(props.toggleProfile) return <Redirect to = {"/users"} />
 
   return (
-    <div>
+    <div className={s.container}>
       <h2 className={s.login_title}>Working with POST request</h2>
       <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <input

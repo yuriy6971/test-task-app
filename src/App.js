@@ -13,7 +13,7 @@ function App() {
         <Header />
 
         <div className="app_wrapper_content ">
-          <Route path="" component={Test_Info} />
+          <Route path="/" exact component={Test_Info} />
           <Route path="/users" component={Users} />
           <Route path="/login" component={Login} />
         </div>

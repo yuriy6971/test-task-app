@@ -1,6 +1,7 @@
 .users_container {
     max-width: 904px;
     margin: 0 auto;
+    padding-top: 130px;
 }
 .users_title {
     font-size: 40px;
